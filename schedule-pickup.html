@@ -97,6 +97,7 @@
     <!--hidden forms-->
     <div class="d-none">
         <form name="phoneForm" id="phoneForm">
+            {% csrf_token %}
             <input type="number" id="mobile_number" name="mobile_number">
         </form>
         
@@ -116,6 +117,8 @@
 
             <div class="modal-body">
               <form name="detailsForm" id="detailsForm" method="POST" action="">
+                    {% csrf_token %}
+                    
                     <p style="color: red;" id="errorMsg"></p>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Enter Name" id="customer_name" name="customer_name">
@@ -169,6 +172,7 @@
                 </div>
                 <div class="modal-body">
                     <form name="otpForm" id="otpForm">
+                        {% csrf_token %}
                         <input type="number" id="mobile_number" name="mobile_number" hidden >
                         <p class="text-center" style="color: green;"  id="ost">n</p>
                         <input type="text" id="otp" name="otp" maxlength="4" class="form-control text-center" placeholder="Enter OTP"><br>
