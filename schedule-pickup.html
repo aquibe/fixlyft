@@ -266,7 +266,7 @@
 
         function sendDetails(){
             const detailsData = new FormData(dForm);
-            fetch('url_here', {
+            fetch(detailsFormUrl, {
                 method : 'POST',
                 body : detailsData
             }).then(function (response){
