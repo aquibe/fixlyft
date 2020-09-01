@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar.css">  
+     
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Fixlyft - Schedule Pickup</title>
+</head>
+<body>
+    <div class="home-header d-sm-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 text-left">  <!--changed-->
+                    <img class="logo" src="images/Logo.png" width="100%">
+                </div>
+                <!--<div class="col-6 text-right">
+                    <a><button class="sp-button">Schedule Pickup</button></a>
+                </div>-->
+            </div>   
+        </div>    
+    </div>
+
+    <!--heading-->
+    <div class="heading-body d-sm-none">
+    <p class="heading-text">Schedule Pickup</p>
+    </div>
+
+  <!--navigation-->
+    <nav class="navbar  navbar-dark fixed-bottom nav-custom d-sm-none">
+        <a href="#" class="nav-element-body "><p class="icofont-home nav-element-logo text-center"></p><p class="nav-element-name">Home</p></a>
+        <a href="" class="nav-element-body "><p class="icofont-smart-phone nav-element-logo text-center"></p><p class="nav-element-name">Shops</p></a>
+        <a href="search.html" class="nav-element-body color-yellow"><p class="icofont-delivery-time nav-element-logo text-center"></p><p class="nav-element-name" style="line-height: 1em;">Schedule Pickup</p></a> <!--changed-->
+        <a href="#" class="nav-element-body"><p class="icofont-price nav-element-logo text-center"></p><p class="nav-element-name">Offers</p></a>
+        <a href="#" class="nav-element-body"><p class="icofont-live-support nav-element-logo text-center"></p><p class="nav-element-name">support</p></a>      
+    </nav>
+
+
+
+  <!--pc alert-->
+    <div class="d-none d-sm-block col-sm-8 offset-sm-2">
+        <div class="alert alert-danger pc-alert">
+            <h2 class="text-center"><b>You are using large screen</b></h2>
+            <hr>
+            <p class="text-center"><b>This website will only work on small screen devices.</b></p>
+            <p class="text-center">Please use <b>mobile browser</b> or</p>
+            <p class="text-center">use <b>Mobile view</b> in your pc browser</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--search box-->
+    <form method="post">
+    <div class="search-box d-sm-none">
+        <div class="search-input search-shadow">          
+                <img class="fixlyft-icon" src="images/fixlyft-icon.png" alt="" width="100%">
+                <input class="search-text" type="text" placeholder="Enter Your Pincode" aria-label="Search">
+                <button type="submit" class="search-btn"><i class="icofont-ui-search color-yellow icon-small"></i></button>         
+          </div>
+    </div>
+    </form> 
+
+
+    <!--shop card-->
+    <div class="shop-list d-sm-none">
+        <div class="shop-card card-shadow">
+            <div class="row">
+                <div class="col-3"><img src="images/shop.png" class="shop-image"></div>
+                <div class="col-9">
+                    <div class="image-body"><img src="images/p.png"  class="shop-type"></div>
+                    <p class="shop-name ">Shop Name</p>
+                    <img src="images/5.png" height="16px">
+                    <p class="shop-place shop-property">Hospital Road,Old bustand</p>
+                    <p class="shop-city shop-property">calicut</p>
+                    
+                    <button class="shop-pickup" type="button" onclick="pickup('slug','pk')">Schedule Pickup</button>
+                    <a><button class="shop-call" type="button" onclick="showOtp()">Call</button></a>
+                    
+                </div>
+            </div>            
+            
+        </div>
+    </div>
+
+    <!--hidden forms-->
+    <div class="d-none">
+        <form name="phoneForm" id="phoneForm">
+            <input type="number" id="mobile_number" name="mobile_number">
+        </form>
+        
+    </div>
+
+
+    <!--modals-->
+
+    <!--form modal-->
+    <div class="modal "  id="formModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Enter Details</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+              <form name="detailsForm" id="detailsForm" method="POST" action="">
+                    <p style="color: red;" id="errorMsg"></p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Name" id="customer_name" name="customer_name">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Enter 10 digit mobile number" id="mobile_numberr" name="mobile_number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Device Name" id="device_name" name="device_name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter your place" id="place" name="place">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="What is complaint ?" id="complaint" name="complaint">
+                    </div>
+                     <input type="text" name="mobileshop" id="mobileshop" hidden>
+                    
+                    <button class="submit-button" type="button" onclick="validateForm()">submit</button>             
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--success-->
+    <div class="modal "  id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    
+                    <h2 style="color: green;" class="text-center">Success</h2><br>
+                    <h5 style="color:green" class="text-center">Your request is submited</h5><br>
+                    <h5 class="text-center">Our team will contact you soon</h5><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--otp modal-->
+    <div class="modal "  id="otpModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5><b>Enter OTP</b></h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form name="otpForm" id="otpForm">
+                        <input type="number" id="mobile_number" name="mobile_number" hidden >
+                        <p class="text-center" style="color: green;"  id="ost">n</p>
+                        <input type="text" id="otp" name="otp" maxlength="4" class="form-control text-center" placeholder="Enter OTP"><br>
+                        <button class="submit-button" type="button" onclick="sendOtp()">Validate</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Wrong otp-->
+    <div class="modal "  id="failedModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    
+                    <h2 style="color: red;" class="text-center">Ooops..!</h2><br>
+                    <h5 style="color:red" class="text-center">You entered the wrong otp</h5><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var mob;
+        var detailsFormUrl;
+        var dForm = document.getElementById('detailsForm');
+        var pForm = document.getElementById('phoneForm');
+        var oForm = document.getElementById('otpForm');
+        function pickup(s,n){
+            detailsFormUrl=s;
+            document.getElementById('detailsForm').action = detailsFormUrl;
+            document.getElementById('mobileshop').value = n;
+            $("#formModal").modal();
+        }
+
+
+        function validateForm(){
+            if (isName() && isMobile() && isDevice() && isPlace()  && isComplaint()){
+                document.getElementById('errorMsg').innerHTML ='';
+                $("#formModal").modal('hide');
+                mob = document.detailsForm.mobile_number.value;
+                document.phoneForm.mobile_number.value = document.detailsForm.mobile_number.value;
+                document.otpForm.mobile_number.value = document.detailsForm.mobile_number.value;
+                sendPhone();    
+            }
+        }
+        
+        function sendPhone(){
+            const phoneData = new FormData(pForm);
+            fetch('url_here', {
+                method : 'POST',
+                body : phoneData
+            }).then(function (response){
+                return response.json();
+            }).then(function (data){
+                if(data.status=='True'){
+                    showOtp();
+                }else{
+                    sendPhone();
+                }
+            }).catch(function (error){
+                console.error(error);
+            })
+        }
+
+        function showOtp(){
+            document.otpForm.mobile_number.value = mob;
+            document.getElementById('ost').innerHTML = "An otp is send to "+mob;
+            $('#otpModal').modal();
+        }
+
+        function sendOtp(){
+            $('#otpModal').modal('hide');
+            const otpData = new FormData(oForm);
+            fetch('url_here', {
+                method : 'POST',
+                body : otpData
+            }).then(function (response){
+                return response.json();
+            }).then(function (data){
+                if(data.status=='True'){
+                    sendDetails();
+                }else{
+                    showFailed();
+                }
+            }).catch(function (error){
+                console.error(error);
+            })
+        }
+
+        function sendDetails(){
+            const detailsData = new FormData(dForm);
+            fetch('url_here', {
+                method : 'POST',
+                body : detailsData
+            }).then(function (response){
+                return response.json();
+            }).then(function (data){
+                if(data.status=='True'){
+                    showSuccess();
+                }else{
+                    sendDetails();
+                }
+            }).catch(function (error){
+                console.error(error);
+            })
+        }
+
+
+        function showSuccess(){
+            $('#successModal').modal();
+        }
+        function showFailed(){
+            $('#failedModal').modal();
+        }
+        
+
+
+
+
+        //form validation
+        function isMobile(){
+            
+            if(document.detailsForm.mobile_number.value.length == 10){
+                return true;
+            }else{
+                document.getElementById('errorMsg').innerHTML = "Enter a valid mobile number";
+                return false;
+            }
+        }
+        function isName(){
+            if((document.getElementById('customer_name').value.length < 30)&&(document.getElementById('customer_name').value.length > 0)){
+                return true;
+            }else{
+                if(document.getElementById('customer_name').value.length > 29){
+                    document.getElementById('errorMsg').innerHTML = "Name should be less than 30 charecters";
+                }
+                if(document.getElementById('customer_name').value.length < 1){
+                    document.getElementById('errorMsg').innerHTML = "Name is required";
+                }
+                
+                return false;
+            }
+        }
+        function isPlace(){
+            if((document.getElementById('place').value.length < 50)&&(document.getElementById('place').value.length >0)){
+                return true;
+            }else{
+                if(document.getElementById('place').value.length > 49){
+                    document.getElementById('errorMsg').innerHTML = "Place should be less than 50 charecters";
+                }
+                if(document.getElementById('place').value.length < 1 ){
+                    document.getElementById('errorMsg').innerHTML = "Place is required";
+                }
+                return false;
+            }
+        }
+        function isDevice(){
+            if((document.getElementById('device_name').value.length < 30)&&(document.getElementById('device_name').value.length > 0)){
+                return true;
+            }else{
+                if(document.getElementById('device_name').value.length > 29){
+                    document.getElementById('errorMsg').innerHTML = "Device name should be less than 30 charecters";
+                }
+                if(document.getElementById('device_name').value.length < 1){
+                    document.getElementById('errorMsg').innerHTML = "Device name is required";
+                }
+                
+                return false;
+            }
+        }
+
+        function isComplaint(){
+            if((document.getElementById('complaint').value.length < 50)&&(document.getElementById('complaint').value.length > 0)){
+                return true;
+            }else{
+                if(document.getElementById('complaint').value.length > 49){
+                    document.getElementById('errorMsg').innerHTML = "Complaint should be less than 30 charecters";
+                }
+                if(document.getElementById('complaint').value.length < 1){
+                    document.getElementById('errorMsg').innerHTML = "Complaint  is required";
+                }
+                
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
+<!--
+    customer_name
+    mobile_number
+    device_name
+    complaint
+    place
+    mobileshop
+-->
