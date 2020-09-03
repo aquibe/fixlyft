@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/navbar.css">    
-    <link rel="stylesheet" href="icofont/icofont.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  
-   
-    <title>Fixlyft - Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/navbar.css">  
+  <link rel="stylesheet" href="icofont/icofont.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">  
+  <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <!--header-->
@@ -23,9 +21,9 @@
         <div class="col-6 text-left">  <!--changed-->
           <img class="logo" src="images/Logo.png" width="100%">
         </div>
-        <!--<div class="col-6 text-right">
-          <a><button class="sp-button">Schedule Pickup</button></a>
-        </div>-->
+        <div class="col-6 text-right">
+          <a href="tel:7736157248"><button class="sp-button">support (24x7)</button></a>
+        </div>
       </div>   
     </div>    
   </div>
@@ -33,20 +31,20 @@
   <!--heading-->
   <div class="heading-body d-sm-none">
     <div style="margin-top: -35px;border: none;outline: none;padding-bottom: 25px;">
-        <a href=""><button class="round-button"><i class="icofont-price"></i></button></a>
-        <a href=""><button class="round-button"><i class="icofont-price"></i></button></a>
-        <a href=""><button class="round-button"><i class="icofont-price"></i></button></a>
-        <a href=""><button class="round-button"><i class="icofont-price"></i></button></a>
-        <a href=""><button class="round-button"><i class="icofont-price"></i></button></a>
+        <a href="tel:7736157248"><button class="round-button"><i class="icofont-phone"></i></button></a>
+        <a href="mailto:fixlyft99@gmail.com"><button class="round-button"><i class="icofont-envelope"></i></button></a>
+        <a href="https://facebook.com/fixlyft"><button class="round-button"><i class="icofont-facebook"></i></button></a>
+        <a href="https://instagram.com/fix_lyft"><button class="round-button"><i class="icofont-instagram"></i></button></a>      
+        <a href="https://twitter.com/Fixlyft1"><button class="round-button"><i class="icofont-twitter"></i></button></a>
     </div>
   </div>
 
   <!--navigation-->
   <nav class="navbar  navbar-dark fixed-bottom nav-custom d-sm-none">
     <a href="index.html" class="nav-element-body "><p class="icofont-home nav-element-logo text-center"></p><p class="nav-element-name">Home</p></a>
-    <a href="" class="nav-element-body "><p class="icofont-smart-phone nav-element-logo text-center"></p><p class="nav-element-name">Shops</p></a>
-    <a href="schedule-pickup.html.html" class="nav-element-body"><p class="icofont-delivery-time nav-element-logo text-center"></p><p class="nav-element-name" style="line-height: 1em;">Schedule Pickup</p></a> <!--changed-->
-    <a href="#" class="nav-element-body"><p class="icofont-price nav-element-logo text-center"></p><p class="nav-element-name">Offers</p></a>
+    <a href="shops.html" class="nav-element-body "><p class="icofont-smart-phone nav-element-logo text-center"></p><p class="nav-element-name">Shops</p></a>
+    <a href="schedule-pickup.html" class="nav-element-body"><p class="icofont-delivery-time nav-element-logo text-center"></p><p class="nav-element-name" style="line-height: 1em;">Schedule Pickup</p></a> <!--changed-->
+    <a href="offers.html" class="nav-element-body"><p class="icofont-price nav-element-logo text-center"></p><p class="nav-element-name">Offers</p></a>
     <a href="support.html" class="nav-element-body color-yellow"><p class="icofont-live-support nav-element-logo text-center"></p><p class="nav-element-name">support</p></a>      
   </nav>
 
@@ -62,18 +60,160 @@
     </div>
   </div>
     
-    <div class="container d-sm-none">
-        <p style="font-size: 22px;font-weight: 700;" class="faq-heading">FAQ</p>
+  <div class="container d-sm-none">
+    <p style="font-size: 22px;font-weight: 700;" class="faq-heading">FAQ</p>
+
+
+    <div class="panel-group" id="accordion">
+
+      <div class="panel panel-default panel-custom support-panel">            
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"  class="support-question-link">
+              <div class="" >
+                 
+                &nbsp;&nbsp;What is Fixlyft?
+              </div>
+          </a>          
+          <div id="collapse1" class="panel-collapse collapse ">
+              <div class="panel-body">
+                <hr>
+                <p class="answer">
+                Fixlyft is India's first and most trusted online gadget only repair portal connecting customers with their preferred service centers for premium quality care.
+                Fixlyft also offers free pick-up of your device from your location and delivery after completion of service
+                </p>
+              </div>
+          </div>
+      </div><!--1-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"  class="support-question-link">
+            <div class="" >
+               
+              &nbsp;&nbsp;Is my gadget safe with Fixlyft?
+            </div>
+        </a>          
+        <div id="collapse2" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">
+                Fixlyft ensures the safety of your electronic devices by providing undertaking responsibility against any possible theft/loss caused while the device is in our possession. Your data & privacy is safe with us.
+              </p>
+            </div>
+        </div>
+      </div><!--2-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"  class="support-question-link">
+            <div class="" >           
+              How do I schedule a pickup with Fixlyft?
+            </div>
+        </a>          
+        <div id="collapse3" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">
+                You can schedule a pickup just by filling a form in 'schedule pickup' section. We will contact you.
+                </p>
+            </div>
+        </div>
+      </div><!--3-->
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"  class="support-question-link">
+            <div class="" >
+              How does Fixlyft work?
+            </div>
+        </a>          
+        <div id="collapse4" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">With Fixlyft, now you can repair any device at any service center of your choice all at the comfort of your home by selecting your preferred service point and scheduling a pick-up for your device.
+                </p>
+            </div>
+        </div>
+      </div><!--4-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"  class="support-question-link">
+            <div class="" >
+              What time does it take for a gadget to be repaired & delivered?
+            </div>
+        </a>          
+        <div id="collapse5" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">Fixlyft always strives to provide quick service for your devices. However,the actual time of repair for your devices may vary according to the service needed to be done. All updates are given to the customer on real-time basis.
+                </p>
+            </div>
+        </div>
+      </div><!--5-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6"  class="support-question-link">
+            <div class="" >
+              What happens to my device/devices once it is picked up?
+            </div>
+        </a>          
+        <div id="collapse6" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">
+                You will receive an SMS & email confirmation once your gadget has been picked-up. Your gadget is then dispatched to your pre-selected service center/point where it is diagnosed and repaired.
+<br>All real-time updates are sent to the customer through email and SMS.
+                </p>
+            </div>
+        </div>
+      </div><!--6-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7"  class="support-question-link">
+            <div class="" >
+              Is my personal information safe and private?
+            </div>
+        </a>          
+        <div id="collapse7" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">Customer privacy is of the utmost concern to us. Our employees and partners are refrained from accessing into your device.
+                No data is accessed or looked into at any point of time between pick-up to delivery.
+            </p>
+            </div>
+        </div>
+      </div><!--7-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"  class="support-question-link">
+            <div class="" >
+              What gadgets can i repair using Fixlyft?
+            </div>
+        </a>          
+        <div id="collapse8" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">With Fixlyft, you can easily repair/maintain your laptops, smartphones, gaming consoles and tablets.
+            </p>
+            </div>
+        </div>
+      </div><!--8-->
+
+      <div class="panel panel-default panel-custom support-panel">            
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9"  class="support-question-link">
+            <div class="" >
+              How to select a service center of my choice?
+            </div>
+        </a>          
+        <div id="collapse9" class="panel-collapse collapse ">
+            <div class="panel-body">
+              <hr>
+              <p class="answer">
+                Our partners are listed on our site and there are options to contact them and to schedule a pick-up for your devices.<br>
+You can select from among the best shops in your area based on real customer ratings.
+            </p>
+            </div>
+        </div>
+      </div>
+      
     </div>
 
-
-
-
-
-
-
-
-
-
+  </div>
+   <div style="height: 80px;"></div>
 </body>
 </html>

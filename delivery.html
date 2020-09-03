@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar.css">  
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">  
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+   
+</head>
+<body onload="shopName()">
+    <div class="container">
+        <div class="row" >
+            <div style="height: 10%;" class="col-12"> &nbsp;</div>
+            <div class="col-12 col-md-6 offset-md-3" style="display: flex;align-items: center;">
+                <p style="font-weight: 600;font-size: 30px;">Fixlyft Delivery</p>
+            </div>
+          
+            <div class="col-12 col-md-6 offset-md-3" id="formDiv">
+               <form target="hidden_frame" onsubmit="formSubmited()" name="detailsForm" id="detailsForm" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScNLVcmk1XgWVr46LBYBox5OZRSfdqv75qZuPpw3dKnieNUSw/formResponse">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="entry.1990855123" value="" required placeholder="Customer Name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="entry.1366678758" value="" placeholder="Customer Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="entry.947348477" value="" required placeholder="Device and Complaint">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="entry.235428658" value="" required placeholder="Delivery Location">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="entry.287947688" value="" required placeholder="Pickup Time">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="entry.353483748" value="" required placeholder="Shop Name" id="shopname">
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Submit</button><br><br>         
+                </form>
+            </div>
+            <div id="success" class="col-12">
+                <a href="index.html"><button class="submit-button">Goto Website</button></a>
+            </div>
+
+            
+        </div>  
+        <div class="d-none">
+            <iframe id="hidden_frame" name="hidden_frame"></iframe>
+        </div>  
+       
+
+    </div>
+    <div class="modal "  id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    
+                    <h2 style="color: green;" class="text-center">Success</h2><br>
+                    <h5 style="color:green" class="text-center">Your request is submited</h5><br>
+                    <h5 class="text-center">Our team will contact you soon</h5><br><br>
+                </div>
+            </div>
+        </div>
+      </div>
+    <script>
+        function shopName(){
+            document.getElementById('success').style.visibility = "hidden";
+            var url=document.URL;
+            var i = url.indexOf('?')
+            var shop = url.substring(i+1,);
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            shop = shop.replace("%20", " ");
+            
+           
+            if(i>0){
+                document.getElementById('shopname').value = shop;
+            }       
+        }
+
+        function formSubmited(){
+            document.getElementById('formDiv').style.visibility = "hidden";
+            document.getElementById('success').style.visibility = "visible";
+            $('#successModal').modal();
+        }
+    </script>
+</body>
+</html>

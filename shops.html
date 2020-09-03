@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/navbar.css">  
+  <link rel="stylesheet" href="icofont/icofont.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">  
+  <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+  <!--script for this page (only)-->
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+ 
+  <div class="home-header d-sm-none">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 text-left">  <!--changed-->
+          <img class="logo" src="images/Logo.png" width="100%">
+        </div>
+        <div class="col-6 text-right">
+          <button class="sp-button" onclick="addShop()"> Add Shop </button>
+        </div>
+      </div>   
+    </div>    
+  </div>
+
+  <!--heading-->
+  <div class="heading-body d-sm-none">
+    <p class="heading-text">Shops</p>
+  </div>
+
+  <!--navigation-->
+  <nav class="navbar  navbar-dark fixed-bottom nav-custom d-sm-none">
+    <a href="index.html" class="nav-element-body "><p class="icofont-home nav-element-logo text-center"></p><p class="nav-element-name">Home</p></a>
+    <a href="shops.html" class="nav-element-body color-yellow"><p class="icofont-smart-phone nav-element-logo text-center"></p><p class="nav-element-name">Shops</p></a>
+    <a href="schedule-pickup.html" class="nav-element-body"><p class="icofont-delivery-time nav-element-logo text-center"></p><p class="nav-element-name" style="line-height: 1em;">Schedule Pickup</p></a> <!--changed-->
+    <a href="offers.html" class="nav-element-body"><p class="icofont-price nav-element-logo text-center"></p><p class="nav-element-name">Offers</p></a>
+    <a href="support.html" class="nav-element-body"><p class="icofont-live-support nav-element-logo text-center"></p><p class="nav-element-name">support</p></a>      
+  </nav>
+
+
+
+  <!--pc alert-->
+  <div class="d-none d-sm-block col-sm-8 offset-sm-2">
+    <div class="alert alert-danger pc-alert">
+      <h2 class="text-center"><b>You are using large screen</b></h2>
+      <hr>
+      <p class="text-center"><b>This website will only work on small screen devices.</b></p>
+      <p class="text-center">Please use <b>mobile browser</b> or</p>
+      <p class="text-center">use <b>Mobile view</b> in your pc browser</p>
+    </div>
+  </div>
+
+    <!-- Search box -->
+    
+    <div class="d-block d-sm-none" style="overflow: auto;white-space: nowrap;">
+      <table id="shoptable" class="table table-responsive table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>&nbsp; Shop Name &nbsp;&nbsp;&nbsp;</th>
+                <th>&nbsp; City &nbsp;&nbsp;&nbsp;</th>
+                <th>&nbsp; Address &nbsp;&nbsp;&nbsp;</th>
+                <th>&nbsp; Pincode &nbsp;&nbsp;&nbsp;</th>
+                <th>&nbsp; Rating &nbsp;&nbsp;&nbsp;</th>
+ 
+            </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>&nbsp; Shop Name &nbsp;&nbsp;&nbsp;</th>
+            <th>&nbsp; City &nbsp;&nbsp;&nbsp;</th>
+            <th>&nbsp; Address &nbsp;&nbsp;&nbsp;</th>
+            <th>&nbsp; Pincode &nbsp;&nbsp;&nbsp;</th>
+            <th>&nbsp; Rating &nbsp;&nbsp;&nbsp;</th>
+              
+          </tr>
+      </tfoot>
+      <tbody>
+          <!--loop starts here-->
+          <tr>
+            <td><!-- shop name --></td>
+            <td><!-- city --></td>
+            <td><!-- address --></td>
+            <td><!--pincode--></td>
+            <td><!-- rating --></td>
+          </tr>
+        
+          <!--loop ends here-->
+      </tbody>
+      
+    </table>
+    </div>
+    
+    <script>
+      $(document).ready( function () {
+        $('#shoptable').DataTable({
+          paging:false
+        });
+    } );
+    </script>
+
+<div class="modal"  id="formModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Enter Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form target="hidden_frame"onsubmit="formSubmited()" name="detailsForm" id="detailsForm" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeVdPSBg0o_JJe-zHCZr91mWKEnEOoJQYU_bRjQ-VBPT1y5FA/formResponse">
+          <div class="form-group">
+            <input class="form-control" type="text" name="entry.233147194" value="" placeholder="Shop Name" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="number" name="entry.2036732347" value="" placeholder="Mobile number" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="entry.1796204548" value="" placeholder="Address" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="entry.3091946" value="" placeholder="Services" required>
+          </div>
+          <button type="submit" class="submit-button">Submit</button><br><br>
+          <p id="textPlace" style="color: green;" class="text-center"></p>
+          <p id="textPlace2" class="text-center"></p>          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal "  id="successModal">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              
+              <h2 style="color: green;" class="text-center">Success</h2><br>
+              <h5 style="color:green" class="text-center">Your request is submited</h5><br>
+              <h5 class="text-center">Our team will contact you soon</h5><br><br>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="d-none">
+  <iframe name="hidden_frame" id="hidden_frame"></iframe>
+</div>
+    <script>
+      function addShop(){
+        $('#formModal').modal();
+      }
+      function formSubmited(){
+        document.getElementById('textPlace').innerHTML = 'This form is already submitted.';
+        document.getElementById('textPlace2').innerHTML =  'Our team will contact you soon';
+        $('#successModal').modal();
+        $('#formModal').modal('hide');
+      }
+    </script>
+
+<div style="height: 80px;"></div>
+</body>
+</html>
