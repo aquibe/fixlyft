@@ -130,19 +130,21 @@ body{
     padding-right: 5%;
 }
 .shop-card{
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 10px;
     background-color: white;
     width: 90%;
     margin-left: 10%;
     border-radius: 10px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
     
 }
 .shop-image{
     width: 90px;
+    height: 90px;
     margin-left: -60%;
     margin-top: 28px;
+    border-radius: 10px; 
 }
 .shop-property{
     margin: 0%;
@@ -280,4 +282,35 @@ body{
     border-radius: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.answer{
+    font-size: 12px;
+}
+.support-question-link{
+    color: black;
+    font-size: 14px;
+    
+}
+.support-question-link:active,.support-question-link:focus,.support-question-link::selection{
+    color: black;
+    
+}
+.support-panel{
+    
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.np-buttons{
+    background-color: white;
+    color:blue;
+    border: none;
+    padding-top: 3px;
+    padding-bottom:3px;
+    width: 50%;
+    border-radius: 15px;
 }
